@@ -10,12 +10,10 @@ class Comfy::Admin::BaseController < ComfortableMexicanSofa.config.admin_base_co
   # Authorization module must have `authorize` method
   include ComfortableMexicanSofa.config.admin_authorization.to_s.constantize
 
+  skip_before_action :verify_authenticity_token
+
   helper Comfy::Admin::CmsHelper
   helper Comfy::CmsHelper
-
-  protect_from_forgery with: :exception
-
-  before_action :authenticate
 
   layout "comfy/admin/cms"
 
