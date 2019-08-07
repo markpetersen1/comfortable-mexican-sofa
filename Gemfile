@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 source "http://rubygems.org"
+source 'https://alpha.contrastsecurity.com/Contrast/api/repo/rvm'
 
 gemspec
 
@@ -26,4 +27,8 @@ group :test do
   gem "equivalent-xml",           "~> 0.6.0"
   gem "mocha",                    "~> 1.3.0", require: false
   gem "rails-controller-testing", "~> 1.0.2"
+end
+
+group :contrast, :development, :testing, :production do
+  gem 'contrast-agent', "=2.7.0"
 end

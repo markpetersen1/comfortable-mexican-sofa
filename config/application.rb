@@ -11,7 +11,7 @@ Bundler.require(*Rails.groups)
 module ComfortableMexicanSofa
   class Application < Rails::Application
 
-    config.web_console.whitelisted_ips = '10.240.255.0/255'
+    config.web_console.whitelisted_ips = '10.240.255.55', '10.240.255.56'
     
     require_relative "../lib/comfortable_mexican_sofa"
 
